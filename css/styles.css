@@ -1,0 +1,116 @@
+body {
+    background-color: #E1D7D4;
+    font-family: 'Roboto Mono', monospace;
+
+}
+.main-container {
+    position: relative;
+    margin-top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 50%;
+    text-align: center;
+}
+/***************
+**   HEADER   **
+****************/
+.title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 0;
+    color: #E34E45;
+}
+.sub-title {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/***************
+**   TABLES   **
+****************/
+.table-grid {
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.table {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.available {
+    color: #CCC;
+    background-color: #EEE;
+}
+.reserved {
+    color: #CCC;
+    background-color: #ADAAAA;
+}
+
+/***************
+**    FORM    **
+****************/
+
+.res-form {
+    display: none;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: flex;             NEED TO CHANGE CLASS HERE FOR SHOWING THE FORM  */ 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+#close-form {
+    position: absolute;
+    font-size: 18px;
+    color: #ADAAAA;
+    top: -10px;
+    right: 15px;
+}
+.res-title {
+    font-size: 25px;
+}
+.res-sub-title {
+    font-size: 15px;
+    margin: 10px;
+}
+.res-info {
+    font-family: 'Roboto Mono', monospace;
+    border: none;
+    border-bottom: 1.5px solid #EEE;
+    background-color: white;
+    height: 30px;
+    width: 350px;
+    margin: 10px;
+}
+.res-save {
+    height: 40px;
+    width: 350px;
+    box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
+    border: none;
+    background-color: #008000;
+    color: white;
+    font-size: 14px;
+    margin: 10px;
+}
