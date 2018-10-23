@@ -10,7 +10,7 @@ $(document).ready(() => {
         })
         // Available table - display reservation form, activate save button
         .on("click", ".available", (event) => {
-            $(".res-form").css("display", "flex");
+            $(".res-form").fadeIn().css("display", "flex");
             saveRes(event.target);
         });
 
@@ -20,7 +20,7 @@ $(document).ready(() => {
         $(".res-sub-title").text(`Table Number: ${$(tableClicked).text()}`);
 
         $(".res-save").on("click", () => {
-            $(".res-form").css("display", "none");
+            $(".res-form").fadeOut();
             $(tableClicked).addClass("reserved")
                 .removeClass("available")
                 .unbind("mouseover")
@@ -30,7 +30,7 @@ $(document).ready(() => {
 
     // When "x" is pressed on form, close form and reset save button
     $("#close-form").on("click", () => {
-        $(".res-form").css("display", "none");
+        $(".res-form").fadeOut();
         $(".res-save").unbind("click");
     });
 
