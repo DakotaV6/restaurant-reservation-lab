@@ -17,8 +17,7 @@ $(document).ready(() => {
     // Save button submit - hide form, add reserved, remove available
     function saveRes(tableClicked) {
         // Change subtitle to current table number
-        let tableNum = $(tableClicked).text();
-        $(".res-sub-title").text(`Table Number: ${tableNum}`);
+        $(".res-sub-title").text(`Table Number: ${$(tableClicked).text()}`);
 
         $(".res-save").on("click", () => {
             $(".res-form").css("display", "none");
