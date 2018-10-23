@@ -55,10 +55,12 @@ body {
 .available {
     color: #CCC;
     background-color: #EEE;
+    cursor: pointer;
 }
 .reserved {
     color: #CCC;
     background-color: #ADAAAA;
+    cursor: not-allowed;
 }
 
 /***************
@@ -87,6 +89,7 @@ body {
     color: #ADAAAA;
     top: -10px;
     right: 15px;
+    cursor: pointer;
 }
 .res-title {
     font-size: 25px;
