@@ -30,8 +30,8 @@ body {
 **   TABLES   **
 ****************/
 .table-grid {
-    height: 350px;
-    width: 350px;
+    height: 270px;
+    width: 270px;
     background-color: white;
     border: 5px solid white;
     border-radius: 5px;
@@ -44,8 +44,8 @@ body {
     align-items: center;
 }
 .table {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     margin: 5px;
     border-radius: 50%;
     display: flex;
@@ -70,12 +70,11 @@ body {
 .res-form {
     display: none;
     height: 400px;
-    width: 400px;
+    width: 90vw;
     position: absolute;
     top: 110px;
     left: 50%;
     transform: translateX(-50%);
-    /* display: flex;             NEED TO CHANGE CLASS HERE FOR SHOWING THE FORM  */ 
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -104,16 +103,36 @@ body {
     border-bottom: 1.5px solid #EEE;
     background-color: white;
     height: 30px;
-    width: 350px;
+    width: 80vw;
     margin: 10px;
 }
 .res-save {
     height: 40px;
-    width: 350px;
+    width: 80vw;
     box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
     border: none;
     background-color: #008000;
     color: white;
     font-size: 14px;
     margin: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .table-grid {
+        height: 350px;
+        width: 350px;
+    }
+    .table {
+        height: 100px;
+        width: 100px;
+    }
+    .res-form {
+        width: 400px;
+    }
+    .res-info {
+        width: 350px;
+    }
+    .res-save {
+        width: 350px;
+    }
 }
