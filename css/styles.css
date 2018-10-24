@@ -44,6 +44,7 @@ body {
     align-items: center;
 }
 .table {
+    position: relative;
     height: 80px;
     width: 80px;
     margin: 5px;
@@ -63,9 +64,8 @@ body {
     cursor: not-allowed;
 }
 .tooltip {
-    /* display: none; */
     position: absolute;
-    top: 70px;
+    bottom: -30px;
     font-size: 12px;
     width: 30vw;
     color: black;
@@ -156,6 +156,6 @@ body {
         width: 350px;
     }
     .tooltip {
-        /* width: ; */
+        width: 150px;
     }
 }

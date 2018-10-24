@@ -25,7 +25,6 @@ $(document).ready(() => {
                 .attr("partyName", $("input").eq(0).val())
                 .attr("partySize", $("input").eq(2).val())
                 .removeClass("available")
-            // .unbind("click");
 
             // Clears inputs
             $("input").each(function () {
@@ -41,6 +40,7 @@ $(document).ready(() => {
         $(".res-save").unbind("click");
     });
 
+    // Add tooltip information
     $(document)
         .on("mouseenter", ".reserved", (event) => {
             if ($(event.target).attr("partyName") && ($(event.target).attr("partySize"))) {
@@ -55,8 +55,5 @@ $(document).ready(() => {
         .on("mouseleave", ".reserved", () => {
             $(".tooltip").remove();
         });
-
-
-
 
 });
