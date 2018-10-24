@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(() => {
+    let container = null;
     $(document)
         // Hover event for tables
         .on("mouseover", ".available", (event) => {
@@ -10,23 +11,29 @@ $(document).ready(() => {
         })
         // Available table - display reservation form, activate save button
         .on("click", ".available", (event) => {
+            container = event.target;
             $(".res-form").fadeIn().css("display", "flex");
-            saveRes(event.target);
-        });
 
-    // Save button submit - hide form, add reserved, remove available
-    function saveRes(tableClicked) {
-        // Change subtitle to current table number
-        $(".res-sub-title").text(`Table Number: ${$(tableClicked).text()}`);
+            // Change subtitle to current table number
+            $(".res-sub-title").text(`Table Number: ${$(container).text()}`);
+        })
+        // Save button submit - hide form, add reserved, remove available
+        .on("click", ".res-save", () => {
 
-        $(".res-save").on("click", () => {
-            $(".res-form").fadeOut();
-            $(tableClicked).addClass("reserved")
+            $(container)
+                .addClass("reserved")
+                .attr("partyName", $("input").eq(0).val())
+                .attr("partySize", $("input").eq(2).val())
                 .removeClass("available")
-                .unbind("mouseover")
-                .unbind("click");
+            // .unbind("click");
+
+            // Clears inputs
+            $("input").each(function () {
+                $(this).val("");
+            })
+
+            $(".res-form").fadeOut();
         });
-    };
 
     // When "x" is pressed on form, close form and reset save button
     $("#close-form").on("click", () => {
@@ -34,9 +41,20 @@ $(document).ready(() => {
         $(".res-save").unbind("click");
     });
 
-
-
-
+    $(document)
+        .on("mouseenter", ".reserved", (event) => {
+            if ($(event.target).attr("partyName") && ($(event.target).attr("partySize"))) {
+                $(event.target).append(`
+            <section class="tooltip">
+                <p class="name">Name: ${$(event.target).attr("partyName")}</p>
+                <p class="party">Size of party: ${$(event.target).attr("partySize")}</p>
+            </section>
+            `);
+            }
+        })
+        .on("mouseleave", ".reserved", () => {
+            $(".tooltip").remove();
+        });
 
 
 

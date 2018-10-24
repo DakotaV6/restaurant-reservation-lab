@@ -63,6 +63,7 @@ body {
     cursor: not-allowed;
 }
 .tooltip {
+    /* display: none; */
     position: absolute;
     top: 70px;
     font-size: 12px;
